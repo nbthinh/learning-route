@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 // import { ChildHomeComponent } from './home/child-home/child-home.component';
 import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
+import { ArticleDetailComponent } from './article-detail/article-detail.component';
+// import { CommonModule } from '@angular/common';
 
 
 // const routes: Routes = [
@@ -22,11 +24,12 @@ import { SecondComponent } from './second/second.component';
   declarations: [
     AppComponent,
     FirstComponent,
-    SecondComponent,HomeComponent
+    SecondComponent,HomeComponent,ArticleDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    // CommonModule
     // RouterModule.forRoot(routes)
   ],
   exports: [RouterModule],

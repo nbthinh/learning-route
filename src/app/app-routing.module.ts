@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ArticleDetailComponent } from './article-detail/article-detail.component';
 import { FirstComponent } from './first/first.component';
 import { ChildHomeComponent } from './home/child-home/child-home.component';
 import { HomeComponent } from './home/home.component';
@@ -29,6 +30,10 @@ const routes: Routes = [
         component: ChildHomeComponent, // child route component that the router renders
       },
     ],
+  },
+  {
+    path: "detail/:slug",
+    component: ArticleDetailComponent
   }
 ];
 
