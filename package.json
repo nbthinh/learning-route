@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "stats": "webpack-bundle-analyzer dist/routing-app/stats.json"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +21,7 @@
     "@angular/router": "^15.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "webpack-bundle-analyzer": "^4.8.0",
     "zone.js": "~0.12.0"
   },
   "devDependencies": {
@@ -33,6 +35,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
-    "typescript": "~4.8.2"
+    "typescript": "~4.8.2",
+    "webpack-cli": "^5.0.2"
   }
 }

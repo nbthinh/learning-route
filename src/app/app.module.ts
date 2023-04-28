@@ -10,7 +10,8 @@ import { HomeComponent } from './home/home.component';
 // import { ChildHomeComponent } from './home/child-home/child-home.component';
 import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
-import { ArticleDetailComponent } from './article-detail/article-detail.component';
+import { ArticleModule } from './articles/articles.module';
+// import { ArticleDetailComponent } from './articles/article-detail/article-detail.component';
 // import { CommonModule } from '@angular/common';
 
 
@@ -24,11 +25,13 @@ import { ArticleDetailComponent } from './article-detail/article-detail.componen
   declarations: [
     AppComponent,
     FirstComponent,
-    SecondComponent,HomeComponent,ArticleDetailComponent
+    SecondComponent,HomeComponent,
+    // ArticleDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ArticleModule
     // CommonModule
     // RouterModule.forRoot(routes)
   ],

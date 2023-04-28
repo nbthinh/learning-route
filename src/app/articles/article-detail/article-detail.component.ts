@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { filter, map, Observable, of, pluck, switchMap } from "rxjs";
-import { Article } from "../models/article";
-import { ArticleService } from "../services/article.service";
+import { Article } from "../../models/article";
+import { ArticleService } from "../../services/article.service";
 @Component({
     selector: `app-home`,
     // templateUrl: "./home.component.html"

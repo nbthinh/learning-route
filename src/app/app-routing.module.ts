@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ArticleDetailComponent } from './article-detail/article-detail.component';
+// import { ArticleDetailComponent } from './articles/article-detail/article-detail.component';
 import { FirstComponent } from './first/first.component';
 import { ChildHomeComponent } from './home/child-home/child-home.component';
 import { HomeComponent } from './home/home.component';
@@ -22,7 +22,7 @@ const routes: Routes = [
     ],
   },
   {
-    path: "home",
+    path: "",
     component: HomeComponent,
     children: [
       {
@@ -31,10 +31,10 @@ const routes: Routes = [
       },
     ],
   },
-  {
-    path: "detail/:slug",
-    component: ArticleDetailComponent
-  }
+  // {
+  //   path: "detail/:slug",
+  //   component: ArticleDetailComponent
+  // }
 ];
 
 @NgModule({
