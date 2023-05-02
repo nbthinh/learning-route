@@ -11,6 +11,7 @@ import { ArticleService } from "src/app/services/article.service";
             {{ article.title }} <br/>
             <!-- <a [routerLink]="['/detail', article.slug]">Read more</a> -->
             <a style="cursor: pointer; text-decoration: underline;" (click)="onReadMoreClick(article.slug)">Read more</a>
+            <a style="cursor: pointer; text-decoration: underline;margin-left: 1rem" (click)="onEditClick(article.slug)">Edit</a>
 
             </li>
         </ul>
@@ -24,5 +25,8 @@ export class ArticleListComponent {
     }
     onReadMoreClick(slug: string){
         this.router.navigate(['/articles', slug])
+    }
+    onEditClick(slug: string){
+        this.router.navigate(["/articles", slug, "edit"])
     }
 }

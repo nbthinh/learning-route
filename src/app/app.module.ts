@@ -10,6 +10,12 @@ import { HomeComponent } from './home/home.component';
 // import { ChildHomeComponent } from './home/child-home/child-home.component';
 import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
+import { ArticleDetailEditComponent } from './article-detail-edit/article-detail-edit.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
+
+
+
 // import { ArticleModule } from './articles/articles.module';
 // import { ArticleDetailComponent } from './articles/article-detail/article-detail.component';
 // import { CommonModule } from '@angular/common';
@@ -26,11 +32,13 @@ import { SecondComponent } from './second/second.component';
     AppComponent,
     FirstComponent,
     SecondComponent,HomeComponent,
+    ArticleDetailEditComponent,
     // ArticleDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     // ArticleModule
     // CommonModule
     // RouterModule.forRoot(routes)

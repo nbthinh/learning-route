@@ -34,7 +34,7 @@ const routes: Routes = [
   },
   {
     path: "articles",
-    canActivate: [ArticlesGuard],
+    canLoad: [ArticlesGuard],
     data: {
       feature: "article",
       permissions: "articles-read"
