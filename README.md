@@ -28,3 +28,14 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 - https://stackblitz.com/edit/so-66723751?file=src%2Fapp%2Fapp.module.ts
+
+
+## Solution
+
+- https://stackoverflow.com/questions/66563535/type-formgroup-null-is-not-assignable-to-type-formgroup-type-null-is-no
+```
+Solution 1 :(By Changing null checking flags)
+change produitFormGroup: FormGroup | null= null; to produitFormGroup: FormGroup;.
+change "strict": true, to "strict": false, on tsconfig.json
+here,the TS compilers type checker will permanently ignore the null and undefined value checking for whole project.
+```
