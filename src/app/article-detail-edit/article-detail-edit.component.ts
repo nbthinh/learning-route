@@ -1,9 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { filter, Observable, of, pluck, Subject, switchMap, takeUntil } from 'rxjs';
+import { ActivatedRoute, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { filter, Observable, of, pluck, shareReplay, Subject, switchMap, take, takeUntil } from 'rxjs';
 import { Article } from '../models/article';
 import { ArticleService } from '../services/article.service';
+import { CheckDeactivate } from '../services/check-deactivate';
 
 @Component({
   selector: 'app-article-detail-edit',
@@ -20,7 +21,7 @@ import { ArticleService } from '../services/article.service';
   `,
   styleUrls: ['./article-detail-edit.component.css']
 })
-export class ArticleDetailEditComponent implements OnInit {
+export class ArticleDetailEditComponent implements OnInit, CheckDeactivate {
   form$!: Observable<FormGroup>;
   initialFormValue: any;
   constructor(
@@ -28,6 +29,15 @@ export class ArticleDetailEditComponent implements OnInit {
     private readonly articleService: ArticleService,
     private readonly fb: FormBuilder
   ){}
+  checkDeactivate(): Observable<boolean> {
+    let formValue: unknown;
+    this.form$.pipe(take(1)).subscribe(form => {
+      formValue = form.getRawValue()
+    })
+    const isEdited = JSON.stringify(this.initialFormValue) != JSON.stringify(formValue);
+    console.log("good_afternoon = ")
+    return of(!isEdited || confirm("Do you want to cancel changes?"))
+  }
 
 
   ngOnInit(){
@@ -35,7 +45,8 @@ export class ArticleDetailEditComponent implements OnInit {
       pluck("slug"),
       switchMap( (slug: string) => this.articleService.getArticle(slug)),
       filter(article => !!article),
-      switchMap(article => of(this.initForm(article)))
+      switchMap(article => of(this.initForm(article))),
+      shareReplay(1)
     )
     console.log("this.form$ = ", this.form$)
   }
