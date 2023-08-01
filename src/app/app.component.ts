@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Firstvariable } from './firstvariable';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,7 @@ export class AppComponent {
     // this.items.push(newItem);
 
   }
-  printFixText(text_at: string) {
-    console.log("text_at = ", text_at)
+  printFixText(text_at: Firstvariable) {
+    console.log("text_at Firstvariable = ", text_at)
   }
 }

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Firstvariable } from '../firstvariable';
 
 @Component({
   selector: 'app-test',
@@ -8,7 +9,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class TestComponent {
   @Input() abc = '123'
   @Output() newItemEvent = new EventEmitter<string>();
-  @Output() second_function = new EventEmitter<string>();
+  @Output() second_function = new EventEmitter<Firstvariable>();
   text_list = []
   input_text: "ABC";
   
@@ -16,7 +17,10 @@ export class TestComponent {
     this.newItemEvent.emit(value);
   }
   addNewItemSecond(){
-    this.second_function.emit("Ha Noi mua nay long bao noi nho")
+    this.second_function.emit({
+      text_at: 'ABC',
+      text_at_2: 15
+    })
   }
 
 

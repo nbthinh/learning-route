@@ -1,3 +1,23 @@
+# Note
+
+- `ng generate component <component-name>`
+- `ng generate interface <interface-name>`
+- `@Output`: pass data to parent component from child component.
+    - Create binding from parent component from template: `<input (parent_binding)="event_function($event)">`
+    - From parent component, create `event_function`:
+    ```
+        event_function(itf: AnyInterface){
+            console.log(itf);
+        }
+    ```
+    - In child component:
+    ```
+        @Output() parent_binding = new EventEmitter<AnyInterface>(); // In <> is type of data we want to pass out to parent component
+        child_function_component(){
+            this.parent_binding(data: AnyInterface)
+        }
+    ```
+
 # RoutingApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
