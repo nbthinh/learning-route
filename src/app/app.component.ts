@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  // [x: string]: string;
   title = 'routing-app';
+  abc_parent = "Sing a song";
+
+
+  // items = ['item1', 'item2', 'item3', 'item4'];
+  addItem(newItem: string) {
+    console.log(newItem)
+    // this.items.push(newItem);
+
+  }
+  printFixText(text_at: string) {
+    console.log("text_at = ", text_at)
+  }
 }

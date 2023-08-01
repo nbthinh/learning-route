@@ -1,0 +1,15 @@
+<h1>This is test component</h1>
+<div>abc = {{abc}}</div>
+
+<hr/>
+<div *ngFor="let text of text_list">{{text}}</div>
+<br/>
+<input [(ngModel)]="input_text" />
+<br/>
+<button (click)="handle_add_text(input_text)">Handle add text</button>
+<button (click)="addNewItemSecond()">Second button</button>
+<hr/>
+
+
+<br/><br/><br/><br/><br/>
+<button type="button" (click)="addNewItem('Da khuc dem nay chang the nao dang do, trong noi khat khao em cham cham quay ve')">Add to parent's list</button>

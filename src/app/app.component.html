@@ -321,4 +321,5 @@
     <a routerLink="/articles">Articles</a>
   </li>
 </ul>
+<app-test [abc]="abc_parent" (newItemEvent)="addItem($event)" (second_function)="printFixText($event)"></app-test>
 <router-outlet></router-outlet>

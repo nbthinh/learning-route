@@ -13,7 +13,9 @@ import { SecondComponent } from './second/second.component';
 import { ArticleDetailEditComponent } from './article-detail-edit/article-detail-edit.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { TestComponent } from './test/test.component';
 
+import { FormsModule } from '@angular/forms';
 
 
 // import { ArticleModule } from './articles/articles.module';
@@ -33,12 +35,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     FirstComponent,
     SecondComponent,HomeComponent,
     ArticleDetailEditComponent,
+    TestComponent,
     // ArticleDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule
     // ArticleModule
     // CommonModule
     // RouterModule.forRoot(routes)
